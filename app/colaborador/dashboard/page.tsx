@@ -87,14 +87,14 @@ export default function Dashboard(){
             <div className="h-full w-full flex flex-col space-y-1">
                 <div className="h-full w-full flex space-x-1">
                     <div className="h-full w-[40%] bg-[#ffff] rounded-md shadeow-md p-2">
-                        <h1 className="text-[#993399] font-semibold">Total de Tarefas Realizadas</h1>
+                        <h1 className="text-[#993399] font-semibold text-2xl">Total de Tarefas Realizadas</h1>
                         <div className="h-full w-full flex justify-center items-center">
                             <h1 className="text-[70px] text-[#993399]">9</h1>
                         </div>
                     </div>
                     <div className="h-full w-full bg-[#ffff] rounded-md shadeow-md p-2">
-                        <h1 className='text-[#993399] font-semibold'>Porcentagem dos Tipos de Tarefa</h1>
-                        <div className="h-full w-full">
+                        <h1 className='text-[#993399] font-semibold text-1xl'>Porcentagem dos Tipos de Tarefa</h1>
+                        <div className="h-full w-full items-end justify-end">
                                 <ResponsivePie
                         data={data}
                         margin={{ top: 40, right: 40, bottom: 80, left: 80 }}

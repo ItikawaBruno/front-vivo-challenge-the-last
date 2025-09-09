@@ -24,7 +24,7 @@ export default function Anotacoes(){
         <>
             <div className="h-full w-full space-y-1 flex flex-col">
                 <div className="w-full h-fit bg-[#ffff] text-[#000] rounded-md shadow-md flex flex-col p-2">
-                    <h1 className="text-[#993399] font-semibold mb-1">Anotação</h1>
+                    <h1 className="text-[#993399] font-semibold mb-1 text-3xl">Anotação</h1>
                     <label htmlFor="titulo" className="text-[#993399]">Titulo</label>
                     <input name="titulo" id="titulo" type="text" className="p-2 mb-2 bg-[#e2e2e2] rounded-md" placeholder="Digite o titulo da anotação" value={titulo} onChangeCapture={(e) => setTitulo(e.currentTarget.value)}/>
                     <textarea name="" id="" placeholder="Faça suas anotações" className="bg-[#e2e2e2] w-full rounded-md p-2 min-h-[100px]" value={anotacao} onChange={(e) => setAnotacao(e.currentTarget.value)}></textarea>
