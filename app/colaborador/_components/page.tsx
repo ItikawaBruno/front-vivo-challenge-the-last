@@ -19,8 +19,17 @@ export default function SideBar() {
 
   useEffect(() => {
     function handleResize() {
-      setIsMobile(window.innerWidth < 768);
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+
+      // trava a sidebar no estado fechado se for mobile
+      if (mobile) {
+        setIsOpen(false);
+      } else {
+        setIsOpen(true); // volta ao estado aberto no desktop
+      }
     }
+
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -37,12 +46,13 @@ export default function SideBar() {
   return (
     <div
       className={`h-[95%] rounded-md ml-1 my-auto border hover:border-[#e04ce0] bg-[#b341b3] text-[#f3f3f3] shadow-lg transition-all duration-300 flex flex-col
-        ${isMobile ? "w-20" : isOpen ? "w-64" : "w-20"}`}
+        ${isOpen ? "w-64" : "w-20"}`}
     >
       <div className="flex items-center justify-between mb-6">
-        {(isOpen || isMobile) && (
+        {isOpen && !isMobile && (
           <h1 className="text-lg font-bold tracking-wide px-2">VIVI</h1>
         )}
+
         {!isMobile && (
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -64,7 +74,8 @@ export default function SideBar() {
               }`}
             >
               {menu.icon}
-              {(isOpen || isMobile) && (
+              {/* mostra texto somente se desktop e aberto */}
+              {!isMobile && isOpen && (
                 <span className="text-sm font-medium">{menu.name}</span>
               )}
             </div>
@@ -73,7 +84,7 @@ export default function SideBar() {
       </nav>
 
       <div className="mt-auto border-t border-white/20 pt-4">
-        {(isOpen || isMobile) && (
+        {!isMobile && isOpen && (
           <p className="text-xs opacity-80 text-center">2025 VIVI</p>
         )}
       </div>
