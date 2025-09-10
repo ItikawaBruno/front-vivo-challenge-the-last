@@ -9,6 +9,7 @@ import {
   Notebook,
   ChevronLeft,
   ChevronRight,
+  Plus,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -37,9 +38,9 @@ export default function SideBar() {
 
   const menus = [
     { name: "Home", icon: <Home size={22} />, route: "/gestor/home" },
-    { name: "Tarefas", icon: <CheckSquare size={22} />, route: "/gestor/new-tarefas" },
     { name: "Dashboard", icon: <LayoutDashboard size={22} />, route: "/gestor/dashboard" },
     { name: "Anotações", icon: <Notebook size={22} />, route: "/gestor/anotacao" },
+    { name: "Nova Tarefa", icon: <Plus size={22} />, route: "/gestor/new-tarefa" },
   ];
 
   return (
